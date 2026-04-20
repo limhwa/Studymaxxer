@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: "Geist", "Geist Fallback", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Geist Mono", "Geist Mono Fallback", ui-monospace, monospace;
+
+  --color-background: oklch(0.13 0.005 285);
+  --color-foreground: oklch(0.96 0.004 285);
+  --color-card: oklch(0.18 0.006 285);
+  --color-card-foreground: oklch(0.96 0.004 285);
+  --color-popover: oklch(0.18 0.006 285);
+  --color-popover-foreground: oklch(0.96 0.004 285);
+  --color-primary: oklch(0.72 0.13 170);
+  --color-primary-foreground: oklch(0.12 0.015 170);
+  --color-secondary: oklch(0.25 0.012 285);
+  --color-secondary-foreground: oklch(0.94 0.004 285);
+  --color-muted: oklch(0.24 0.006 285);
+  --color-muted-foreground: oklch(0.72 0.006 285);
+  --color-accent: oklch(0.32 0.06 185);
+  --color-accent-foreground: oklch(0.96 0.004 285);
+  --color-destructive: oklch(0.62 0.21 25);
+  --color-destructive-foreground: oklch(0.98 0.004 285);
+  --color-border: oklch(0.27 0.006 285);
+  --color-input: oklch(0.25 0.006 285);
+  --color-ring: oklch(0.72 0.13 170);
+  --color-warning: oklch(0.78 0.15 82);
+  --color-merit: oklch(0.72 0.13 150);
+  --color-demerit: oklch(0.65 0.19 35);
+  --color-info: oklch(0.68 0.12 225);
+  --radius: 0.5rem;
+  --radius-sm: calc(var(--radius) * 0.75);
+  --radius-md: var(--radius);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.25);
+}
+
+* {
+  border-color: var(--color-border);
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  min-height: 100vh;
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
+}
+
+button,
+input,
+textarea,
+select {
+  letter-spacing: 0;
+}
+
+::selection {
+  background: color-mix(in oklch, var(--color-primary), transparent 70%);
+}
+
+.metric-grid {
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+}
+
